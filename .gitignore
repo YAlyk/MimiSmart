@@ -1,0 +1,19 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+*.tmp
+*.bak
+
+# Конфиги с секретами (создавай локально, не коммить)
+.env
+config.local.*
+
+# PHP
+vendor/
+composer.lock
