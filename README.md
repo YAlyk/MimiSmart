@@ -1,4 +1,11 @@
-# MimiSmart Integrations
+## Дисклеймер
+
+Это **неофициальный** репозиторий, не связанный с компанией MimiSmart.  
+Все скрипты написаны в частном порядке и предоставляются **«как есть»**, без каких-либо гарантий.  
+Автор не несёт ответственности за любые последствия использования материалов из этого репозитория.
+
+---
+# Integrations
 
 Коллекция кастом-скриптов и интеграций для системы умного дома.  
 Скрипты написаны на Bash, PHP и внутреннем языке Mimi Logic.
@@ -9,30 +16,43 @@
 ## Структура репозитория
 
 ```
-integrations/
-├── samsung-tv/          # Sony BRAVIA — управление по REST API (HTTP + PSK)
-│   ├── 40.sh            # Выключение телевизора
-│   ├── 41.sh            # Включение телевизора
-│   └── 42.sh            # Переключение на HDMI 3
+├── custom-scripts/      # Кастомные скрипты на Mimi Logic под конкретные объекты и ТЗ
+│   ├── (свет, климат, шторы, охрана, вентиляция, уведомления и др.)
+│   └── README.md
 │
-├── denon-receiver/      # Ресивер Denon AVR — управление по Telnet (порт 23)
-│   ├── 90.sh            # Включение ресивера (PWON)
-│   ├── 91.sh            # Выключение ресивера (PWSTANDBY)
-│   ├── 92.sh            # Источник: TV (SITV)
-│   ├── 93.sh            # Источник: Game (SIGAME)
-│   ├── 94.sh            # Источник: Media Player (SIMPLAY)
-│   └── 95.sh            # Отправка команды через GNU screen/Telnet (PHP)
-│
-├── jvc-projector/       # Проектор JVC — управление бинарными командами по TCP
-│   └── 21.sh            # Включение проектора
-│
-└── openweathermap/      # Погода OpenWeatherMap → виртуальные сенсоры MimiSmart
-    └── 96.sh            # Получение погоды и отправка в MimiSmart (PHP)
+└── integrations/        # Bash/PHP-скрипты для интеграции внешнего AV-оборудования
+    ├── samsung-tv/          # Sony BRAVIA — управление по REST API (HTTP + PSK)
+    │   ├── 40.sh            # Выключение телевизора
+    │   ├── 41.sh            # Включение телевизора
+    │   └── 42.sh            # Переключение на HDMI 3
+    │
+    ├── denon-receiver/      # Ресивер Denon AVR — управление по Telnet (порт 23)
+    │   ├── 90.sh            # Включение ресивера (PWON)
+    │   ├── 91.sh            # Выключение ресивера (PWSTANDBY)
+    │   ├── 92.sh            # Источник: TV (SITV)
+    │   ├── 93.sh            # Источник: Game (SIGAME)
+    │   ├── 94.sh            # Источник: Media Player (SIMPLAY)
+    │   └── 95.sh            # Отправка команды через GNU screen/Telnet (PHP)
+    │
+    ├── jvc-projector/       # Проектор JVC — управление бинарными командами по TCP
+    │   └── 21.sh            # Включение проектора
+    │
+    └── openweathermap/      # Погода OpenWeatherMap → виртуальные сенсоры MimiSmart
+        └── 96.sh            # Получение погоды и отправка в MimiSmart (PHP)
 ```
 
 ---
 
-## Интеграции
+## Кастомные скрипты
+
+Скрипты на внутреннем языке Mimi Logic, написанные под конкретные объекты и ТЗ.  
+Покрывают свет, климат, вентиляцию, шторы, охрану, уведомления и другие сценарии.
+
+→ [Полный список с описаниями](custom-scripts/README.md)
+
+---
+
+## Интеграции внешнего оборудования
 
 | Устройство | Протокол | Порт | Скрипты |
 |---|---|---|---|
@@ -77,6 +97,8 @@ integrations/
 - [Denon AVR Control Protocol (PDF)](https://assets.denon.com/documentmaster/us/avr2113ci_avr1913_protocol_v04.pdf)
 - [JVC D-ILA LAN Control Guide (PDF)](https://support.jvc.com/consumer/support/documents/DILAremoteControlGuide.pdf)
 - [OpenWeatherMap API](https://openweathermap.org/api)
+
+
 
 ## Лицензия
 
