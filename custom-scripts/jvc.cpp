@@ -1,0 +1,37 @@
+/*
+{
+    desc:"Проектор JVC LX-NZ30",
+    tag:"item",
+    name:"Вкл. JVC",
+    selectArea:true,
+    addItems:[
+        {tag:"item", id:"%TARGET%", name:"Выкл. JVC", "sub-id":"%SUBID99%", "type":"script"},
+    ],
+    vars:[
+        {type:"comment",text:"Введите ID скрипта в папке exe для включения",width:200, style:"color:red;"},
+        {name:"EXEID",type:"number",required:true,defaultValue:52,min:0,max:100,desc:"ID скрипта JVC в папке exe",descWidth:350},
+        {type:"comment",text:"Введите ID скрипта в папке exe для выключения",width:200, style:"color:red;"},
+        {name:"EXEID1",type:"number",required:true,defaultValue:52,min:0,max:100,desc:"ID скрипта JVC в папке exe",descWidth:350},
+        {name:"OFFJVC",type:"hidden",value:"%TARGET%:%SUBID99%"},
+    ]
+}
+*/
+
+void OTSKOK(){
+	setStatus(V-ADDR, 0);
+	setStatus(OFFJVC, 0);
+}
+
+V-ID/V-ADDR{
+    if((opt(0)&1)==1){
+        setStatus(1000:EXEID);
+        delayedCall(OTSKOK, 1);
+    }
+}
+
+V-ID/OFFJVC{
+    if((opt(0)&1)==1){
+        setStatus(1000:EXEID1);
+        delayedCall(OTSKOK, 1);
+    }
+}
