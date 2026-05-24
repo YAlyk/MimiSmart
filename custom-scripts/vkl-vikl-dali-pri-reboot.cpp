@@ -1,6 +1,6 @@
 /*
 {
-  desc:"костыль для дали",
+  desc:"Выключение дали",
   
   tag:"import-script",
   selectArea:true,
